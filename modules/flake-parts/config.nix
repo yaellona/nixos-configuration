@@ -1,7 +1,4 @@
-# Top-level configuration for everything in this repo.
-#
-# Values are set in 'config.nix' in repo root.
-{ lib, ... }:
+{ lib, config, ... }:
 let
   userSubmodule = lib.types.submodule {
     options = {
@@ -25,8 +22,9 @@ let
 in
 {
   imports = [
-    ../config.nix
+    ../../config.nix
   ];
+  config._module.args.me = config.me;
   options = {
     me = lib.mkOption {
       type = userSubmodule;

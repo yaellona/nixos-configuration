@@ -1,45 +1,46 @@
 { pkgs, ... }:
 {
+  flake.modules.nixos.services = {
+    services.xserver = {
+      enable = true;
+      excludePackages = [ pkgs.xterm ];
+      # upscaleDefaultCursor = true;
+    };
 
-  services.xserver = {
-    enable = true;
-    excludePackages = [ pkgs.xterm ];
-    # upscaleDefaultCursor = true;
-  };
+    services.xserver.xkb = {
+      layout = "cn";
+      variant = "";
+    };
 
-  services.xserver.xkb = {
-    layout = "cn";
-    variant = "";
-  };
+    services = {
+      flatpak.enable = true; # 软件包
 
-  services = {
-    flatpak.enable = true; # 软件包
+      power-profiles-daemon.enable = true;
 
-    power-profiles-daemon.enable = true;
+      # linyaps.enable = true;
 
-    # linyaps.enable = true;
+      dbus.enable = true;
 
-    dbus.enable = true;
+      # printing.enable = true;#打印机
 
-    # printing.enable = true;#打印机
+      usbguard.dbus.enable = true;
 
-    usbguard.dbus.enable = true;
+      udisks2.enable = true;
 
-    udisks2.enable = true;
+      upower.enable = true;
 
-    upower.enable = true;
+      envfs.enable = false;
 
-    envfs.enable = false;
+      gvfs.enable = true;
 
-    gvfs.enable = true;
+      seatd.enable = true;
 
-    seatd.enable = true;
+      openssh.enable = false;
 
-    openssh.enable = false;
+      acpid.enable = true;
 
-    acpid.enable = true;
+      speechd.enable = true;
 
-    speechd.enable = true;
-
+    };
   };
 }

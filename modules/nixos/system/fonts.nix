@@ -13,10 +13,12 @@ let
   ];
 in
 {
-  fonts = {
-    enableDefaultPackages = true;
-    fontconfig.enable = true;
-    fontDir.enable = true;
-    packages = font_pkgs;
+  flake.modules.nixos.fonts = {
+    fonts = {
+      enableDefaultPackages = true;
+      fontconfig.enable = true;
+      fontDir.enable = true;
+      packages = font_pkgs;
+    };
   };
 }

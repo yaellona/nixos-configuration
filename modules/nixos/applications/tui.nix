@@ -1,9 +1,11 @@
 { pkgs, ... }:
 {
-
-  environment.systemPackages = with pkgs; [
-    kitty
-    opencode
-    go-musicfox
-  ];
+  flake.modules.nixos.tui = {
+    environment.systemPackages = with pkgs; [
+      kitty
+      opencode
+      go-musicfox
+      yazi
+    ];
+  };
 }
