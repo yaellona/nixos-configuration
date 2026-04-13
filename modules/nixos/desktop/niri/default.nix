@@ -19,8 +19,8 @@
       waypaper
       awww
       xwayland-satellite
-      thunar
-
+      mpv
     ];
+
   };
 }
