@@ -1,0 +1,132 @@
+@define-color theme_bg_color {{ colors.surface.dark.hex }};
+@define-color theme_fg_color {{ colors.on_surface.dark.hex }};
+@define-color theme_base_color {{ colors.background.dark.hex }};
+@define-color theme_text_color {{ colors.on_background.dark.hex }};
+@define-color theme_selected_bg_color {{ colors.primary.dark.hex }};
+@define-color theme_selected_fg_color {{ colors.on_primary.dark.hex }};
+@define-color theme_tooltip_bg_color {{ colors.inverse_surface.dark.hex }};
+@define-color theme_tooltip_fg_color {{ colors.inverse_on_surface.dark.hex }};
+@define-color wm_color {{ colors.surface_container.dark.hex }};
+@define-color wm_title_color {{ colors.on_surface.dark.hex }};
+@define-color wm_unfocused_color {{ colors.surface_container.dark.hex }};
+@define-color borders {{ colors.outline.dark.hex }};
+@define-color unfocused_borders {{ colors.outline_variant.dark.hex }};
+@define-color warning_color {{ colors.tertiary.dark.hex }};
+@define-color error_color {{ colors.error.dark.hex }};
+@define-color success_color {{ colors.tertiary.dark.hex }};
+@define-color accent_color {{ colors.primary.dark.hex }};
+@define-color accent_bg_color {{ colors.primary.dark.hex }};
+@define-color accent_fg_color {{ colors.on_primary.dark.hex }};
+
+window,
+dialog,
+assistant {
+  background-color: {{ colors.surface.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+headerbar {
+  background-color: {{ colors.surface_container.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+.sidebar,
+placessidebar,
+treeview.view {
+  background-color: {{ colors.surface_container_low.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+treeview.view:selected {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+notebook tab,
+notebook.header {
+  background-color: {{ colors.surface_container.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+notebook tab:checked {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+button {
+  background-color: {{ colors.surface_container_high.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+  border-color: {{ colors.outline.dark.hex }};
+}
+
+button:hover {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+button:checked,
+button:active {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+entry {
+  background-color: {{ colors.surface_container_high.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+  border-color: {{ colors.outline.dark.hex }};
+}
+
+entry:focus {
+  border-color: {{ colors.primary.dark.hex }};
+}
+
+scrollbar {
+  background-color: {{ colors.surface_container.dark.hex }};
+}
+
+scrollbar slider {
+  background-color: {{ colors.outline.dark.hex }};
+}
+
+menu,
+.menu {
+  background-color: {{ colors.surface_container.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+menuitem:hover {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+separator {
+  background-color: {{ colors.outline_variant.dark.hex }};
+}
+
+tooltip {
+  background-color: {{ colors.inverse_surface.dark.hex }};
+  color: {{ colors.inverse_on_surface.dark.hex }};
+}
+
+selection {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+.view:selected {
+  background-color: {{ colors.primary.dark.hex }};
+  color: {{ colors.on_primary.dark.hex }};
+}
+
+paned separator {
+  background-color: {{ colors.outline_variant.dark.hex }};
+}
+
+statusbar {
+  background-color: {{ colors.surface_container.dark.hex }};
+  color: {{ colors.on_surface.dark.hex }};
+}
+
+toolbar {
+  background-color: {{ colors.surface_container.dark.hex }};
+}

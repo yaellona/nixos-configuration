@@ -18,6 +18,7 @@
         # ignoreUserConfig = true;
         waylandFrontend = true;
         settings = {
+          globalOptions.Appearance.theme = "matugen";
           inputMethod = {
             GroupOrder."0" = "Default";
             "Groups/0" = {

@@ -1,56 +1,22 @@
+{ me, ... }:
 {
-  flake.modules.hjem.userDirs =
-    {
-      lib,
-      config,
-      ...
-    }:
-    let
-      inherit (lib.types) path;
-      inherit (lib.options) mkOption;
-
-      # cfg = config.xdg.userDirs;
-    in
-    {
-      options.xdg.userDirs = {
-        music.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Music";
-        };
-        desktop.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Desktop";
-        };
-        documents.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Documents";
-        };
-        downloads.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Downloads";
-        };
-        pictures.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Pictures";
-        };
-
-        publicShare.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Public";
-        };
-        templates.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Templates";
-        };
-        videos.directory = mkOption {
-          type = path;
-          default = "${config.directory}/Videos";
-        };
+  flake.modules.hjem.userDirs = {
+    xdg.config.files = {
+      "user-dirs.dirs" = {
+        text = ''
+          XDG_DESKTOP_DIR="/home/${me.username}/Desktop"
+          XDG_DOCUMENTS_DIR="/home/${me.username}/Documents"
+          XDG_DOWNLOAD_DIR="/home/${me.username}/Downloads"
+          XDG_MUSIC_DIR="/home/${me.username}/Music"
+          XDG_PICTURES_DIR="/home/${me.username}/Pictures"
+          XDG_PUBLICSHARE_DIR="/home/${me.username}/Public"
+          XDG_TEMPLATES_DIR="/home/${me.username}/Templates"
+          XDG_VIDEOS_DIR="/home/${me.username}/Videos"
+        '';
       };
-
-      # Add later if need be, I only need this module to provide some options to other modules
-      config = {
-
+      "user-dirs.locale" = {
+        text = "en_US";
       };
     };
+  };
 }

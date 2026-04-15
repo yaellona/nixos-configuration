@@ -1,0 +1,75 @@
+[Info]
+Name=matugen
+Version=1.0
+
+[InputPanel]
+# Candidate
+Margin=5,5
+BackColor={{ colors.surface.dark.hex }}
+BackColorT=00
+FrontColor={{ colors.on_surface.dark.hex }}
+FontSize=14
+Font=Mono Lisa, JetBrains Mono, 14
+
+# Cursor
+CursorColor={{ colors.primary.dark.hex }}
+
+# Highlighted Back Color
+HighlightCandidateCharColor={{ colors.on_primary.dark.hex }}
+HighlightCandidateBackColor={{ colors.primary.dark.hex }}
+HighlightCandidateCharColorT=FF
+HighlightCandidateBackColorT=FF
+
+# Preedit
+PreeditBackColorT=00
+PreeditFrontColor={{ colors.on_surface.dark.hex }}
+PreeditHighlightColor={{ colors.primary.dark.hex }}
+PreeditHighlightColorT=33
+
+# Menu
+MenuBackgroundColor={{ colors.surface_container.dark.hex }}
+MenuHighlightColor={{ colors.primary.dark.hex }}
+
+# Separator
+SeparatorColor={{ colors.outline_variant.dark.hex }}
+SeparatorColorT=CC
+
+[InputPanel]
+BackColorT=FF
+FrontColor={{ colors.on_surface.dark.hex }}
+HeightPadding=4
+VerticalPadding=8
+ContentPadding=8,4
+PrintOptionDelay=200
+MaxHeight=400
+MinHeight=0
+
+[Sidebar]
+BackColor={{ colors.surface_container_low.dark.hex }}
+Width=25
+
+[Menu]
+FontSize=13
+ContentPadding=6,4
+Border=1
+BorderColor={{ colors.outline.dark.hex }}
+BorderColorT=88
+BackColor={{ colors.surface_container.dark.hex }}
+HighlightColor={{ colors.primary.dark.hex }}
+HighlightTextColor={{ colors.on_primary.dark.hex }}
+
+[Hotkey]
+TriggerKey=Control+space
+# 2nd trigger forIM
+2ndTriggerKey=
+
+[Screen]
+# 0=shadow,1=dock,2=fixed
+WindowMode=0
+UsePerScreenDPI=true
+
+[Appearance]
+# Theme=Default
+# ThemeTray=Default
+# Font=Noto Sans CJK SC, Noto Sans CJK SC Medium 13
+Font=Mono Lisa, JetBrains Mono, 13

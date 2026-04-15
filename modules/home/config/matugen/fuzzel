@@ -1,0 +1,14 @@
+font=Maple Mono NF CN:size=10
+prompt=干嘛？> 
+icons-enabled=yes
+lines=12
+width=60
+line-height=30
+icon-theme=WhiteSur
+
+[colors]
+background={{ colors.background.dark.hex }}dc
+text={{ colors.on_surface.dark.hex }}ff
+selection={{ colors.on_surface.dark.hex }}ff
+selection-text={{ colors.background.dark.hex }}ff
+border={{ colors.outline.dark.hex }}ff

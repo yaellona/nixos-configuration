@@ -1,0 +1,42 @@
+screenshots
+clock
+indicator
+indicator-radius=200
+indicator-thickness=15
+effect-blur=10x5
+font=JetBrainsMono Nerd Font 10
+ignore-empty-password
+show-failed-attempts
+fade-in=0.2
+
+# Colors
+inside-color={{ colors.surface.dark.hex }}ff
+inside-clear-color={{ colors.surface.dark.hex }}ff
+inside-ver-color={{ colors.primary.dark.hex }}ff
+inside-wrong-color={{ colors.error.dark.hex }}ff
+inside-logged-out-color={{ colors.surface.dark.hex }}ff
+
+ring-color={{ colors.outline.dark.hex }}ff
+ring-clear-color={{ colors.primary.dark.hex }}ff
+ring-ver-color={{ colors.primary.dark.hex }}ff
+ring-wrong-color={{ colors.error.dark.hex }}ff
+ring-logged-out-color={{ colors.outline.dark.hex }}ff
+
+line-color={{ colors.outline.dark.hex }}ff
+line-clear-color={{ colors.primary.dark.hex }}ff
+line-ver-color={{ colors.primary.dark.hex }}ff
+line-wrong-color={{ colors.error.dark.hex }}ff
+line-logged-out-color={{ colors.outline.dark.hex }}ff
+
+separator-color={{ colors.outline_variant.dark.hex }}ff
+
+text-ver-color={{ colors.on_primary.dark.hex }}ff
+text-wrong-color={{ colors.on_error.dark.hex }}ff
+text-logged-out-color={{ colors.on_surface_variant.dark.hex }}ff
+text-clear-color={{ colors.on_surface_variant.dark.hex }}ff
+
+key-hl-color={{ colors.primary.dark.hex }}80
+bs-hl-color={{ colors.error.dark.hex }}80
+
+caps-lock-bs-hl-color={{ colors.error.dark.hex }}ff
+caps-lock-key-hl-color={{ colors.error.dark.hex }}ff

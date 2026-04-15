@@ -7,10 +7,11 @@
 }:
 let
   cfg = config.flake;
-  allNixosModules = builtins.attrValues (cfg.modules.nixos or {});
-  allHjemModules = builtins.attrValues (cfg.modules.hjem or {});
+  allNixosModules = builtins.attrValues (cfg.modules.nixos or { });
+  allHjemModules = builtins.attrValues (cfg.modules.hjem or { });
 
-  buildHost = name: hostCfg:
+  buildHost =
+    name: hostCfg:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs self;
@@ -27,5 +28,5 @@ let
     };
 in
 {
-  flake.nixosConfigurations = lib.mapAttrs buildHost (cfg.hosts or {});
+  flake.nixosConfigurations = lib.mapAttrs buildHost (cfg.hosts or { });
 }

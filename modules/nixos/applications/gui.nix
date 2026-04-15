@@ -7,9 +7,10 @@
       telegram-desktop
       animeko
       postman
-      obs-studio
       vscode-fhs
-
+      onlyoffice-desktopeditors
+      gthumb
+      mpv
     ];
     programs.firefox.enable = true;
   };

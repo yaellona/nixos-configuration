@@ -11,6 +11,9 @@
       radeontop
       dust
       fastfetch
+      cliphist
+      wl-clipboard
+      libnotify
     ];
   };
 }

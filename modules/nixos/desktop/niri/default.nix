@@ -15,12 +15,12 @@
       waybar
       swaylock
       swayosd
+      swayidle
       mako
       waypaper
       awww
       xwayland-satellite
       mpv
     ];
-
   };
 }
