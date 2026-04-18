@@ -15,9 +15,10 @@
           gvfs.enable = true;
           tumbler.enable = true;
         };
-        environment.systemPackages = [
-          pkgs.ffmpegthumbnailer
-          pkgs.bign-handheld-thumbnailer
+        environment.systemPackages = with pkgs; [
+          ffmpegthumbnailer
+          bign-handheld-thumbnailer
+          file-roller
         ];
 
       };

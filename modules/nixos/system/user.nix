@@ -8,9 +8,9 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "docker"
       ];
       useDefaultShell = true;
-
     };
   };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, me, ... }:
 {
   flake.modules.nixos.services = {
     services.xserver = {
@@ -41,6 +41,13 @@
 
       speechd.enable = true;
 
+      ollama = {
+        enable = true;
+        package = pkgs.ollama-rocm;
+        user = "ollama";
+        # home = "/home/${me.username}/ollama";
+        loadModels = [ "deepseek-r1:1.5b" ];
+      };
     };
   };
 }
