@@ -16,7 +16,7 @@
           }
       }
       layout {
-          gaps 4
+          gaps 8
           background-color "transparent"
           center-focused-column "on-overflow"
           always-center-single-column

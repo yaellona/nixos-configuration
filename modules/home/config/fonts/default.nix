@@ -1,5 +1,0 @@
-{
-    flake.modules.hjem.fonts ={
-      
-    };
-}

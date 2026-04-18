@@ -8,7 +8,7 @@
 let
   cfg = config.flake;
   allNixosModules = builtins.attrValues (cfg.modules.nixos or { });
-  allHjemModules = builtins.attrValues (cfg.modules.hjem or { });
+  allHomeManagerModules = builtins.attrValues (cfg.homeManagerModules or { });
 
   buildHost =
     name: hostCfg:
@@ -17,14 +17,28 @@ let
         inherit inputs self;
         me = config.me;
       };
-      modules =
-        allNixosModules
-        ++ hostCfg.modules
-        ++ [
-          {
-            hjem.extraModules = allHjemModules ++ hostCfg.hjemModules;
-          }
-        ];
+      modules = [
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {
+              inherit inputs;
+              me = config.me;
+            };
+            users.${config.me.username} = {
+              home.username = config.me.username;
+              home.homeDirectory = "/home/${config.me.username}";
+              home.stateVersion = "26.05";
+              programs.home-manager.enable = true;
+            };
+            sharedModules = allHomeManagerModules ++ hostCfg.homeModules;
+          };
+        }
+      ]
+      ++ allNixosModules
+      ++ hostCfg.modules;
     };
 in
 {

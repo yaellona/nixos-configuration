@@ -7,7 +7,7 @@ let
           spawn "swaylock"
       }
       Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-          spawn "${../scripts/clip.sh}"
+          spawn "${../../scripts/clip.sh}"
       }
       Mod+D hotkey-overlay-title="打开搜索" repeat=false {
           spawn "${lib.getExe pkgs.fuzzel}"

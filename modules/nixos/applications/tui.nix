@@ -8,8 +8,6 @@
       yazi
       helix
       btop-rocm
-      swaylock-effects
-      swayidle
     ];
   };
 }

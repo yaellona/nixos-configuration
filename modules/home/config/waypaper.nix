@@ -1,9 +1,9 @@
 { me, pkgs, ... }:
 
 {
-  flake.modules.hjem.waypaper = {
+  flake.homeManagerModules.waypaper = {
 
-    xdg.config.files."waypaper/config.ini".text =
+    xdg.configFile."waypaper/config.ini".text =
       #ini
       ''
         [Settings]

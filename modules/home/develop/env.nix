@@ -1,25 +1,21 @@
 { pkgs, ... }:
 {
-  flake.modules.nixos.dev = {
-    environment.systemPackages = with pkgs; [
+  flake.homeManagerModules.env = {
+    home.packages = with pkgs; [
+      hexo-cli
       gcc
       cmake
       gnumake
       go
       nodejs
-      # rustup
-      rustc
-      cargo
-
+      rustup
       jdk21
-      hexo-cli
-      distrobox
-      distrobox-tui
+      # openclaw
     ];
-
-    environment.variables = {
+    home.sessionVariables = {
       RUSTUP_DIST_SERVER = "https://mirrors.ustc.edu.cn/rust-static";
       RUSTUP_UPDATE_ROOT = "https://mirrors.ustc.edu.cn/rust-static/rustup";
+
       GOPROXY = "https://goproxy.cn,direct";
       GOSUMDB = "off";
     };

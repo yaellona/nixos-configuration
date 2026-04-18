@@ -8,14 +8,20 @@
           default = [ ];
           description = "Extra NixOS modules for this host.";
         };
-        hjemModules = lib.mkOption {
+        homeModules = lib.mkOption {
           type = lib.types.listOf lib.types.deferredModule;
           default = [ ];
-          description = "Extra hjem modules for this host.";
+          description = "Extra home-manager modules for this host.";
         };
       };
     });
     default = { };
     description = "Host definitions consumed by the builder.";
+  };
+
+  options.flake.homeManagerModules = lib.mkOption {
+    type = lib.types.attrsOf lib.types.deferredModule;
+    default = { };
+    description = "home-manager modules shared across all hosts.";
   };
 }

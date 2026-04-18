@@ -6,8 +6,8 @@ let
   rules = import ./_rules.nix { };
 in
 {
-  flake.modules.hjem.niri-flake = {
-    xdg.config.files."niri/config.kdl".text =
+  flake.homeManagerModules.niri-flake = {
+    xdg.configFile."niri/config.kdl".text =
       #kdl
       ''
         ${settings}
