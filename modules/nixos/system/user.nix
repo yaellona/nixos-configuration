@@ -8,6 +8,8 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "kvm"
+        "libvirtd"
         "docker"
       ];
       useDefaultShell = true;

@@ -10,7 +10,6 @@
       nodejs
       rustup
       jdk21
-      # openclaw
     ];
     home.sessionVariables = {
       RUSTUP_DIST_SERVER = "https://mirrors.ustc.edu.cn/rust-static";

@@ -2,7 +2,7 @@
 {
   flake.homeManagerModules.stm32 = {
     home.packages = with pkgs; [
-      # stm32cubemx
+      stm32cubemx
       cmake
       gcc-arm-embedded
       stlink-tool

@@ -8,6 +8,7 @@
       animeko
       onlyoffice-desktopeditors
       gthumb
+      evince
       mpv
     ];
   };

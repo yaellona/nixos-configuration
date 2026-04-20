@@ -12,7 +12,6 @@
       display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
     in
     {
-
       services.swayidle = {
         enable = true;
         events = [

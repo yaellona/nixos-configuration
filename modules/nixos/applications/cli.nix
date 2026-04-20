@@ -8,7 +8,6 @@
       unzip
       unrar
       ffmpeg
-      radeontop
       dust
     ];
   };

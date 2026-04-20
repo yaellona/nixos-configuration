@@ -21,7 +21,6 @@
         show_hidden = False
         show_gifs_only = False
         zen_mode = True
-        post_command = ${./scripts/matugen-reload.sh}
         number_of_columns = 3
 
         swww_transition_type = any
