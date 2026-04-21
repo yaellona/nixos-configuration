@@ -9,7 +9,9 @@
       go
       nodejs
       rustup
-      jdk21
+      dotnet-sdk
+      godot
+      # unityhub
     ];
     home.sessionVariables = {
       RUSTUP_DIST_SERVER = "https://mirrors.ustc.edu.cn/rust-static";
