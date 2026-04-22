@@ -11,15 +11,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      fuzzel
-      waybar
-      swaylock
-      swayosd
-      swayidle
-      mako
-      waypaper
-      awww
-      xwayland-satellite
       mpv
     ];
   };
