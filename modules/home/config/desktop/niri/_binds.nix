@@ -16,7 +16,7 @@ let
           spawn "${lib.getExe pkgs.waypaper}"
       }
       XF86AudioLowerVolume allow-when-locked=true {
-          spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
+          spawn "swayosd-client" "--output-volume" "lower"
       }
       XF86AudioMicMute allow-when-locked=true {
           spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
@@ -25,13 +25,13 @@ let
           spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
       }
       XF86AudioRaiseVolume allow-when-locked=true {
-          spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"
+          spawn "swayosd-client" "--output-volume" "raise"
       }
       XF86MonBrightnessDown allow-when-locked=true {
-          spawn "brightnessctl" "set" "5%-"
+          spawn "swayosd-client" "--brightness" "lower"
       }
       XF86MonBrightnessUp allow-when-locked=true {
-          spawn "brightnessctl" "set" "5%+"
+          spawn "swayosd-client" "--brightness" "raise"
       }
       Mod+Ctrl+R hotkey-overlay-title="随机壁纸" {
           spawn "waypaper" "--random"
@@ -347,6 +347,6 @@ in
 ''
   binds {
   ${Fixed_binds} 
-  ${Custom_noc_binds}
+  ${Custom_binds}
   }
 ''

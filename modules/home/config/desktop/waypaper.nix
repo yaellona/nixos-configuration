@@ -2,14 +2,16 @@
 
 {
   flake.homeManagerModules.waypaper = {
-
+    home.packages = with pkgs; [
+      awww
+    ];
     xdg.configFile."waypaper/config.ini".text =
       #ini
       ''
         [Settings]
         language = en
         backend = awww
-        folder = ${../../../assets/waypapers}
+        folder = ${../../../../assets/waypapers}
         monitors = All
         wallpaper = 
         show_path_in_tooltip = True
