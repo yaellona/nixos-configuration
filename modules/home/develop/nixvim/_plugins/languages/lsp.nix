@@ -1,5 +1,4 @@
 { ... }:
-
 {
   programs.nixvim = {
     plugins.lsp = {
@@ -22,6 +21,18 @@
         tailwindcss.enable = true;
         bashls.enable = true;
         marksman.enable = true;
+        csharp_ls.enable = true;
+        # omnisharp = {
+        #   enable = true;
+        #   settings = {
+        #     cmd = [
+        #       "OmniSharp"
+        #       "--sdk-path"
+        #       dotnetSdkPath
+        #       "--languageserver"
+        #     ];
+        #   };
+        # };
       };
 
     };

@@ -45,8 +45,6 @@
         enable = true;
         package = pkgs.ollama-rocm;
         user = "ollama";
-        # home = "/home/${me.username}/ollama";
-        loadModels = [ "deepseek-r1:1.5b" ];
       };
     };
   };

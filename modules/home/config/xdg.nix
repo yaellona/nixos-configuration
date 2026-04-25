@@ -9,6 +9,7 @@ let
   # pdfViewer = "org.kde.okular.desktop";
   pdfViewer = "org.gnome.Evince.desktop";
   zipViewer = "org.gnome.FileRoller.desktop";
+  textEditor = "kitty-nvim.desktop";
 in
 {
   flake.homeManagerModules.xdg = {
@@ -34,9 +35,9 @@ in
           "image/gif" = [ photoViewer ];
           "image/bmp" = [ photoViewer ];
           "image/tiff" = [ photoViewer ];
-          "image/webp" = [ photoViewer ]; # WebP 格式
-          "image/svg+xml" = [ photoViewer ]; # SVG 矢量图
-          "image/heic" = [ photoViewer ]; # HEIC 格式（苹果常用)
+          "image/webp" = [ photoViewer ];
+          "image/svg+xml" = [ photoViewer ];
+          "image/heic" = [ photoViewer ];
           "image/avif" = [ photoViewer ];
           "application/pdf" = [ pdfViewer ];
 
@@ -48,8 +49,41 @@ in
           "application/x-xz" = [ zipViewer ];
           "application/x-tar" = [ zipViewer ];
 
+          "text/plain" = [ textEditor ];
+          "text/html" = [ textEditor ];
+          "text/css" = [ textEditor ];
+          "text/javascript" = [ textEditor ];
+          "text/xml" = [ textEditor ];
+          "text/markdown" = [ textEditor ];
+          "text/csv" = [ textEditor ];
+          "text/x-shellscript" = [ textEditor ];
+          "text/yaml" = [ textEditor ];
+          "text/x-nix" = [ textEditor ];
+          "text/x-python" = [ textEditor ];
+          "text/x-c" = [ textEditor ];
+          "text/x-c++" = [ textEditor ];
+          "text/x-java" = [ textEditor ];
+          "text/x-rust" = [ textEditor ];
+          "text/x-go" = [ textEditor ];
+          "text/x-toml" = [ textEditor ];
+          "text/x-diff" = [ textEditor ];
+          "application/json" = [ textEditor ];
+          "application/xml" = [ textEditor ];
+          "application/x-yaml" = [ textEditor ];
+          "application/x-shellscript" = [ textEditor ];
+          "application/x-desktop" = [ textEditor ];
         };
       };
     };
+
+    xdg.dataFile."applications/${textEditor}".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=Neovim in Kitty
+      Exec=kitty -e nvim %F
+      Terminal=false
+      Categories=TextEditor;
+      MimeType=text/plain;text/html;text/css;text/javascript;text/xml;text/markdown;text/csv;text/x-shellscript;text/yaml;text/x-nix;text/x-python;text/x-c;text/x-c++;text/x-java;text/x-rust;text/x-go;text/x-toml;text/x-diff;application/json;application/xml;application/x-yaml;application/x-shellscript;application/x-desktop;
+    '';
   };
 }

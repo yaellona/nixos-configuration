@@ -10,7 +10,37 @@
     # cursorline.enable = true;
     # cursorline.settings.cursorword.enable = true;
     fidget.enable = true;
-    # indent-blankline.enable = true;
+    indent-blankline = {
+      enable = true;
+      settings = {
+        indent.char = "│";
+        scope = {
+          show_end = false;
+          show_exact_scope = true;
+          show_start = false;
+        };
+        exclude = {
+          buftypes = [ "terminal" "quickfix" ];
+          filetypes = [ "" "checkhealth" "help" "lspinfo" "TelescopePrompt" "TelescopeResults" ];
+        };
+      };
+    };
+    todo-comments = {
+      enable = true;
+      keymaps = {
+        todoTelescope = {
+          key = "<leader>ft";
+          mode = "n";
+          options.desc = "Todo Telescope";
+        };
+        todoQuickFix = {
+          key = "<leader>ftq";
+          mode = "n";
+          options.desc = "Todo QuickFix";
+        };
+      };
+    };
+    noice.enable = true;
 
     # navbuddy.enable = true;
     # smartcolumn.enable = true;

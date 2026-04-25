@@ -30,6 +30,7 @@
         vue = [ "prettier" ];
         kdl = [ "kdlfmt" ];
         sh = [ "shfmt" ];
+        csharp = [ "csharpier" ];
       };
       formatters = {
         nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
@@ -46,6 +47,13 @@
         kdlfmt.command = "${pkgs.kdlfmt}/bin/kdlfmt";
         qmlformat.command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";
         shfmt.command = "${pkgs.shfmt}/bin/shfmt";
+        csharpier = {
+          command = "${pkgs.csharpier}/bin/csharpier";
+          args = [
+            "format"
+            "--write-stdout"
+          ];
+        };
       };
     };
   };
