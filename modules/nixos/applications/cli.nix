@@ -9,6 +9,7 @@
       unrar
       ffmpeg
       dust
+      minicom
     ];
   };
 }

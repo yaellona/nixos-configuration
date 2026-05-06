@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   flake.modules.nixos.env = {
@@ -11,8 +11,8 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       EDITOR = "nvim";
       MOZ_ENABLE_WAYLAND = "1";
-      XMODIFIERS = "@im=fcitx";
-      QT_IM_MODULE = "fcitx";
+      XMODIFIERS = lib.mkForce "@im=fcitx";
+      QT_IM_MODULE = lib.mkForce "fcitx";
 
     };
 

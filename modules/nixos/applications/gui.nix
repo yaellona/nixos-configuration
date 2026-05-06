@@ -6,7 +6,8 @@
       wechat
       telegram-desktop
       animeko
-      onlyoffice-desktopeditors
+      # onlyoffice-desktopeditors
+      wpsoffice-cn
       gthumb
       evince
       mpv

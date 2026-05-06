@@ -121,8 +121,7 @@
           match app-id="org.jackhuang.hmcl.Launcher"
           open-on-workspace "Game"
       }
-      window-rule {
-          match app-id="wps"
+      window-rule { 
           match app-id="^libreoffice"
           match app-id="Microsoft Windows"
           match app-id="org.kde.kdenlive"
@@ -134,5 +133,4 @@
           open-on-workspace "Work"
           open-maximized true
       }
-
 ''
