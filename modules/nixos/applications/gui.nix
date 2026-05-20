@@ -2,12 +2,13 @@
 {
   flake.modules.nixos.gui = {
     environment.systemPackages = with pkgs; [
-      qq
-      wechat
+      # qq
+      #wechat
       telegram-desktop
       animeko
+      kdePackages.kdenlive
       # onlyoffice-desktopeditors
-      wpsoffice-cn
+      #wpsoffice-cn
       gthumb
       evince
       mpv
