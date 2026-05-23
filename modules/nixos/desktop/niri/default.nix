@@ -6,12 +6,15 @@
       package = pkgs.niri;
     };
 
-    services.displayManager.gdm = {
+    # services.displayManager.gdm = {
+    #   enable = true;
+    # };
+    services.displayManager.ly = {
       enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      mpv
-    ];
+    # environment.systemPackages = with pkgs; [
+    #   mpv
+    # ];
   };
 }

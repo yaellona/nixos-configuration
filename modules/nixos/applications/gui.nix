@@ -5,7 +5,7 @@
       # qq
       #wechat
       telegram-desktop
-      animeko
+      # animeko
       kdePackages.kdenlive
       # onlyoffice-desktopeditors
       #wpsoffice-cn

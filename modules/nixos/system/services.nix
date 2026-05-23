@@ -41,11 +41,11 @@
 
       speechd.enable = true;
 
-      ollama = {
-        enable = true;
-        package = pkgs.ollama-rocm;
-        user = "ollama";
-      };
+      # ollama = {
+      #   enable = true;
+      #   package = pkgs.ollama-rocm;
+      #   user = "ollama";
+      # };
     };
   };
 }

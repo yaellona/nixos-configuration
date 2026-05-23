@@ -10,7 +10,6 @@
       nodejs
       rustup
       dotnet-sdk_10
-      godot
       (prismlauncher.override {
         jdks = [
           pkgs.javaPackages.compiler.temurin-bin.jre-8
