@@ -22,7 +22,7 @@
               "niri/workspaces"
               "cpu"
               "memory"
-              # "temperature"
+              "temperature"
               "custom/div_left"
             ];
             modules-center = [
@@ -62,7 +62,6 @@
               ];
               tooltip = false;
             };
-
             power-profiles-daemon = {
               format = "{icon}";
               tooltip-format = "Power profile: {profile}\nDriver: {driver}";
@@ -74,6 +73,7 @@
                 power-saver = "";
               };
             };
+
             "niri/workspaces" = {
               all-outputs = true;
               expand = false;
@@ -150,14 +150,18 @@
               on-scroll-down = lib.mkDefault "${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
             };
             pulseaudio = {
-              format = "{icon} {volume:2}%";
+              format = "<span color='#${config.lib.stylix.colors.base0A}'> {icon} </span>{volume:2}%";
               format-muted = " ";
               format-bluetooth = "";
               tooltip = false;
               format-icons = {
                 headphone = "";
                 bluetooth = "";
-                speaker = [
+                hands-free = "<span color='#${config.lib.stylix.colors.base0A}'>  </span>";
+                headset = "<span color='#${config.lib.stylix.colors.base0A}'>  </span>";
+                phone = "<span color='#${config.lib.stylix.colors.base0A}'>  </span>";
+                portable = "<span color='#${config.lib.stylix.colors.base0A}'>  </span>";
+                default = [
                   ""
                   ""
                   ""
@@ -177,21 +181,21 @@
 
             cpu = {
               interval = 3;
-              format = " {usage:2}%";
+              format = "<span color='#${config.lib.stylix.colors.base0F}'> </span>{usage:2}%";
               tooltip = true;
               on-click = "kitty -e btop";
             };
 
             memory = {
               interval = 3;
-              format = " {:2}%";
+              format = "<span color='#${config.lib.stylix.colors.base09}'> </span>{:2}%";
               tooltip = true;
               tooltip-format = "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G";
               on-click = "kitty -e btop";
             };
             temperature = {
               interval = 5;
-              format = "󰈸 {temperatureC}°C";
+              format = "<span color='#${config.lib.stylix.colors.base08}'>󰈸 </span>{temperatureC}°C";
               # exec = "cat /sys/class/thermal/thermal_zone5/temp | awk '{print int($1/1000)}'";
             };
 
@@ -263,22 +267,14 @@
                   padding: 0 0.7em;
                   background: #${config.lib.stylix.colors.base01};
               }
+
               #network {color: #${config.lib.stylix.colors.base0C};}
               #battery {color: #${config.lib.stylix.colors.base0B};}
-              #pulseaudio {color: #${config.lib.stylix.colors.base0A};}
-              #backlight {color: #${config.lib.stylix.colors.base09};}
               #bluetooth {color: #${config.lib.stylix.colors.base0D};}
-              #cpu {color: #${config.lib.stylix.colors.base0A}}
-              #memory {color: #${config.lib.stylix.colors.base09}}
               #clock {color: #${config.lib.stylix.colors.base07}}
               #tray {color: #${config.lib.stylix.colors.base06};}
-              #custom-swaync{color: #${config.lib.stylix.colors.base07};}
-              #temperature{color: #${config.lib.stylix.colors.base08};}
-
-              #power-profiles-daemon,
-              #idle_inhibitor {
-                color: #${config.lib.stylix.colors.base07};
-              }
+              #custom-swaync {color: #${config.lib.stylix.colors.base07};}
+              #idle_inhibitor {color: #${config.lib.stylix.colors.base07};}
               #power-profiles-daemon.performance {
                   color: #${config.lib.stylix.colors.base08};
               }

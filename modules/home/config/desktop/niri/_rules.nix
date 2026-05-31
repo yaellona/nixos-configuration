@@ -1,11 +1,11 @@
-{ }:
+{ config, ... }:
 #kdl
 ''
   layer-rule {
-          match namespace="waybar"
-          shadow {
+        match namespace="waybar"
+        shadow {
               off
-          }
+        }
       }
       layer-rule {
           match namespace="^notifications$"
@@ -21,19 +21,22 @@
           match is-focused=false
           opacity 0.8
       }
+      /*
       window-rule {
+          match is-focused=true
           draw-border-with-background false
           geometry-corner-radius 0
           clip-to-geometry true
           shadow {
               on
               softness 10
-              spread 0
+              spread 8
               offset x=0 y=0
               draw-behind-window false
-              color "#000000"
+              color "#${config.lib.stylix.colors.base0E}"
           }
       }
+      */
       window-rule {
           match app-id="com.network.manager"
           match app-id="connman-gtk"
@@ -50,28 +53,19 @@
           open-floating true
       }
       window-rule {
-          match app-id="labwc"
-          open-maximized true
-      }
-      window-rule {
           match app-id="Waydroid"
           match app-id="gamescope"
           match app-id="r#'^steam_app'#"
           match app-id=".gamescope-wrapped"
           open-fullscreen true
       }
-      window-rule {
-          match app-id="foot"
-          match title="Varia"
-          default-column-width {
-              proportion 0.5
-          }
-      }
+      /*
       window-rule {
           match app-id="steam"
           match title="r#'^notificationtoasts_d+_desktop$'#"
           default-floating-position relative-to="bottom-right" x=10 y=10
       }
+      */
       window-rule {
           match app-id="r#'^org.keepassxc.KeePassXC$'#"
           match app-id="r#'^org.gnome.World.Secrets$'#"
@@ -121,7 +115,7 @@
           match app-id="org.jackhuang.hmcl.Launcher"
           open-on-workspace "Game"
       }
-      window-rule { 
+      window-rule {
           match app-id="^libreoffice"
           match app-id="Microsoft Windows"
           match app-id="org.kde.kdenlive"
@@ -132,5 +126,10 @@
           match app-id="affinity.exe"
           open-on-workspace "Work"
           open-maximized true
+      }
+      window-rule {
+          background-effect {
+              blur true
+          }
       }
 ''

@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 #kdl
 ''
   prefer-no-csd
@@ -7,7 +12,6 @@
           hide-not-bound
       }
       xwayland-satellite {
-          // off
           path "${lib.getExe pkgs.xwayland-satellite}"
       }
       gestures {
@@ -31,7 +35,8 @@
           focus-ring {
               off
               width 3
-              active-gradient angle=45 from="#ca9ee6" relative-to="window" to="#85c1dc"
+              /*active-gradient angle=45 from="#ca9ee6" relative-to="window" to="#85c1dc" */
+              active-color "#${config.lib.stylix.colors.base0E}"
               inactive-color "#505050"
           }
       }
