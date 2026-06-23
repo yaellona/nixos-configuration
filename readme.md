@@ -1,4 +1,4 @@
-## Kaelwen的nixos配置
+## yaellona的nixos配置
 
 桌面环境：niri
 
