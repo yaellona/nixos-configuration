@@ -10,6 +10,7 @@
       ffmpeg
       dust
       appimage-run
+      alsa-utils
     ];
   };
 }

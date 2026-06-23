@@ -5,8 +5,8 @@
       enable = true;
       settings = {
         user = {
-          name = "Kaelwen";
-          email = "alyria83@gmail.com";
+          name = "yaellona";
+          email = "2753739819@qq.com";
         };
       };
     };

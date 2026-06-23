@@ -8,6 +8,22 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      wireplumber.extraConfig."99-hecate-a5-volume" = {
+        "monitor.alsa.rules" = [
+          {
+            matches = [
+              {
+                "api.alsa.card.name" = "HECATE A5 GAMING HEADSET";
+              }
+            ];
+            actions = {
+              update-props = {
+                "device.routes.default-sink-volume" = 1.0;
+              };
+            };
+          }
+        ];
+      };
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
 
