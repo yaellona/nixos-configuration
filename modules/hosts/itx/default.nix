@@ -4,6 +4,6 @@
 }:
 {
   config.flake.hosts.${config.me.hostname} = {
-    modules = [ ../_hardware/itx.nix ];
+    modules = [ ./_hardware-configuration.nix ];
   };
 }

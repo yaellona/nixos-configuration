@@ -16,8 +16,8 @@ let
           spawn "${lib.getExe pkgs.waypaper}"
       }
       XF86AudioLowerVolume allow-when-locked=true {
-          spawn "swayosd-client" "--output-volume" "lower"
-      }
+          spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
+        }
       XF86AudioMicMute allow-when-locked=true {
           spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
       }
@@ -25,16 +25,16 @@ let
           spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
       }
       XF86AudioRaiseVolume allow-when-locked=true {
-          spawn "swayosd-client" "--output-volume" "raise"
-      }
+          spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"
+        }
       XF86MonBrightnessDown allow-when-locked=true {
-          spawn "swayosd-client" "--brightness" "lower"
+          spawn "${lib.getExe pkgs.brightnessctl}" "set" "5%-"
       }
       XF86MonBrightnessUp allow-when-locked=true {
-          spawn "swayosd-client" "--brightness" "raise"
+          spawn "${lib.getExe pkgs.brightnessctl}" "set" "5%+"
       }
       Mod+Ctrl+R hotkey-overlay-title="随机壁纸" {
-          spawn "waypaper" "--random"
+          spawn "${lib.getExe pkgs.waypaper}" "--random"
       }
       Mod+T hotkey-overlay-title="打开终端" repeat=false {
           spawn "${lib.getExe pkgs.kitty}"

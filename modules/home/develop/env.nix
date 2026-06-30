@@ -10,6 +10,7 @@
       nodejs
       rustup
       dotnet-sdk_10
+      openjdk21
       (prismlauncher.override {
         jdks = [
           pkgs.javaPackages.compiler.temurin-bin.jre-8

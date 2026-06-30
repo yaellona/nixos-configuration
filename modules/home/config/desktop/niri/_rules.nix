@@ -80,7 +80,7 @@
       window-rule {
           match app-id="firefox"
           match app-id="librewolf"
-          match app-id="zen-browser"
+          match app-id="zen-twilight"
           match app-id="chromium-browser"
           match app-id="io.github.ungoogled_software.ungoogled_chromium"
           open-on-workspace "Browser"

@@ -9,8 +9,8 @@
       unrar
       ffmpeg
       dust
-      appimage-run
-      alsa-utils
+      # sing-box
+      mihomo
     ];
   };
 }
