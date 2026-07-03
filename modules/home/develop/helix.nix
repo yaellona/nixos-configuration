@@ -111,11 +111,27 @@
           {
             name = "javascript";
             auto-format = true;
+            formatter = {
+              command = lib.getExe pkgs.prettier;
+              args = [
+                "--parser"
+                "javascript"
+              ];
+            };
+
             language-servers = [ "typescript-language-server" ];
           }
           {
-            name = "vue";
-            language-servers = [ "vuels" ];
+            name = "typescript";
+            auto-format = true;
+            formatter = {
+              command = lib.getExe pkgs.prettier;
+              args = [
+                "--parser"
+                "typescript"
+              ];
+            };
+            language-servers = [ "typescript-language-server" ];
           }
           {
             name = "qml";
@@ -138,12 +154,40 @@
           {
             name = "json";
             auto-format = true;
+            formatter = {
+              command = lib.getExe pkgs.prettier;
+              args = [
+                "--parser"
+                "json"
+              ];
+            };
+
             language-servers = [ "vscode-json-languageserver" ];
           }
           {
             name = "jsonc";
             auto-format = true;
+            formatter = {
+              command = lib.getExe pkgs.prettier;
+              args = [
+                "--parser"
+                "jsonc"
+              ];
+            };
             language-servers = [ "vscode-json-languageserver" ];
+          }
+          {
+            name = "yaml";
+            auto-format = true;
+            formatter = {
+              command = lib.getExe pkgs.prettier;
+              args = [
+                "--parser"
+                "yaml"
+              ];
+            };
+
+            language-servers = [ "yaml-language-server" ];
           }
 
           {
@@ -158,14 +202,14 @@
             };
           }
           {
-            name = "yaml";
-            language-servers = [ "yaml-language-server" ];
-          }
-          {
             name = "markdown";
+            auto-format = true;
             formatter = {
               command = lib.getExe pkgs.prettier;
-              args = [ "--write" ];
+              args = [
+                "--parser"
+                "markdown"
+              ];
             };
           }
         ];
@@ -182,12 +226,9 @@
           typescript-language-server.command = lib.getExe pkgs.typescript-language-server;
           tailwindcss-language-server.command = lib.getExe pkgs.tailwindcss-language-server;
           rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
-          vuels = {
-            command = lib.getExe pkgs.vue-language-server;
-            args = [ "--stdio" ];
-          };
           qmlls.command = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
           vscode-json-languageserver.command = lib.getExe pkgs.vscode-json-languageserver;
+          vscode-css-languageserver.command = lib.getExe pkgs.vscode-css-languageserver;
           yaml-language-server.command = lib.getExe pkgs.yaml-language-server;
           docker-langserver.command = lib.getExe pkgs.dockerfile-language-server;
           docker-compose-langserver.command = lib.getExe pkgs.docker-compose-language-service;

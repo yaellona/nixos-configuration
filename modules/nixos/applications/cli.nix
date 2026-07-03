@@ -9,7 +9,6 @@
       unrar
       ffmpeg
       dust
-      # sing-box
       mihomo
     ];
   };
