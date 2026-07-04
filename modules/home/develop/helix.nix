@@ -99,7 +99,14 @@
           {
             name = "rust";
             auto-format = true;
-            formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+            # 我去rust-analyzer自己会链接rustfmt
+            # formatter = {
+            #   command = "${lib.getExe pkgs.rustfmt}";
+            #   args = [
+            #     "--edition"
+            #     "2024"
+            #   ];
+            # };
             language-servers = [ "rust-analyzer" ];
           }
           {
