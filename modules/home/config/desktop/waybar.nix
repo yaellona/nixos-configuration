@@ -10,6 +10,7 @@
       # imports = [ ./pavucontrol.nix ];
       programs.waybar = {
         enable = true;
+        systemd.enable = true;
         settings = {
           mainBar = {
             layer = "top";
@@ -151,7 +152,7 @@
             };
             pulseaudio = {
               format = "<span color='#${config.lib.stylix.colors.base0A}'> {icon} </span>{volume:2}%";
-              format-muted = " ";
+              format-muted = "<span color='#${config.lib.stylix.colors.base0A}'>  </span>{volume:2}%";
               format-bluetooth = "";
               tooltip = false;
               format-icons = {

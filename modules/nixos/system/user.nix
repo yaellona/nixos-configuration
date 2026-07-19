@@ -11,6 +11,8 @@
         "kvm"
         "libvirtd"
         "docker"
+        "render" # 新增
+        "video" # 新增
       ];
       useDefaultShell = true;
     };
