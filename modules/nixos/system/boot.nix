@@ -17,12 +17,18 @@
         "udev.log_priority=3"
       ];
 
-      loader.timeout = lib.mkDefault 0;
+      # loader.timeout = lib.mkDefault 0;
 
       loader = {
-        systemd-boot.enable = true;
+        # systemd-boot.enable = true;
+        grub = {
+          enable = true;
+          device = "nodev";
+          efiSupport = true;
+          useOSProber = true;
+        };
         efi.canTouchEfiVariables = true;
-        systemd-boot.configurationLimit = 10;
+        # systemd-boot.configurationLimit = 10;
       };
       kernelPackages = pkgs.linuxPackages_zen;
     };
