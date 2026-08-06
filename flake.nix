@@ -19,6 +19,7 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    coclash.url = "github:yaellona/coclash";
   };
   outputs =
     inputs@{
