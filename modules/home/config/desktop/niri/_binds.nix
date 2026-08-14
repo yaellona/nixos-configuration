@@ -44,39 +44,39 @@ let
       }
     '';
 
-  noc_ipc = ''"noctalia-shell" "ipc" "call"'';
+  noc_ipc = ''"noctalia" "msg"'';
   Custom_noc_binds =
     #kdl
     ''
       Mod+Alt+L hotkey-overlay-title="锁屏" repeat=false {
-          spawn ${noc_ipc} "lockScreen" "lock"
+          spawn ${noc_ipc} "session" "lock"
       }
       Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-          spawn ${noc_ipc} "launcher" "clipboard"
+          spawn ${noc_ipc} "panel-toggle" "clipboard"
       }
       Mod+D hotkey-overlay-title="打开搜索" repeat=false {
-          spawn ${noc_ipc} "launcher" "toggle"
+          spawn ${noc_ipc} "panel-toggle" "launcher"
       }
       Mod+W hotkey-overlay-title="打开壁纸选择器" repeat=false {
-          spawn ${noc_ipc} "wallpaper" "toggle"
+          spawn ${noc_ipc} "panel-toggle" "wallpaper"
       }
       XF86AudioLowerVolume allow-when-locked=true {
-          spawn ${noc_ipc} "volume" "decrease"
+          spawn ${noc_ipc} "volume-down"
       }
       XF86AudioMicMute allow-when-locked=true {
           spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
       }
       XF86AudioMute allow-when-locked=true {
-          spawn ${noc_ipc} "volume" "muteOutput"
+          spawn ${noc_ipc} "volume-mute"
       }
       XF86AudioRaiseVolume allow-when-locked=true {
-          spawn ${noc_ipc} "volume" "increase"
+          spawn ${noc_ipc} "volume-up"
       }
       XF86MonBrightnessDown allow-when-locked=true {
-          spawn ${noc_ipc} "brightness" "decrease"
+          spawn ${noc_ipc} "brightness-down"
       }
       XF86MonBrightnessUp allow-when-locked=true {
-          spawn ${noc_ipc} "brightness" "increase"
+          spawn ${noc_ipc} "brightness-up"
       }
       Mod+T hotkey-overlay-title="打开终端" repeat=false {
           spawn "${lib.getExe pkgs.kitty}"
@@ -347,6 +347,6 @@ in
 ''
   binds {
   ${Fixed_binds} 
-  ${Custom_binds}
+  ${Custom_noc_binds}
   }
 ''
