@@ -7,13 +7,6 @@
     # ];
     imports = [ inputs.coclash.nixosModules.default ];
     programs.coclash.enable = true;
-    # security.wrappers.flclash = {
-    #   source = "${pkgs.flclash}/bin/FlClashCore";
-    #   capabilities = "cap_net_admin,cap_net_bind_service,cap_net_raw+eip";
-    #   owner = "root";
-    #   group = "users";
-    #   permissions = "u+rx,g+rx";
-    # };
     # security.wrappers.mihomo = {
     #   source = "${pkgs.mihomo}/bin/mihomo";
     #   capabilities = "cap_net_admin,cap_net_bind_service,cap_net_raw+eip";
