@@ -1,4 +1,4 @@
-{ me, pkgs, ... }:
+{ me, pkgs, assets, ... }:
 
 {
   flake.homeManagerModules.waypaper = {
@@ -11,7 +11,7 @@
         [Settings]
         language = en
         backend = awww
-        folder = ${../../../../assets/waypapers}
+        folder = ${assets}/waypapers
         monitors = All
         wallpaper = 
         show_path_in_tooltip = True

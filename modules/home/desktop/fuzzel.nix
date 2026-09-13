@@ -26,11 +26,11 @@
             line-height = 30;
           };
           colors = lib.mkForce {
-            background = "${colors.base00}dc"; # 背景颜色
+            background = "${colors.base01}ff"; # 背景颜色
             text = "${colors.base05}ff"; # 未选中项的文本颜色
             selection = "${colors.base07}ff"; # 选中项的背景颜色
             selection-text = "${colors.base00}ff"; # 选中项的文本颜色
-            border = "${colors.base07}ff"; # 边框颜色
+            # border = "${colors.base00}ff"; # 边框颜色
           };
         };
       };

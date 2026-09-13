@@ -5,6 +5,7 @@
       config,
       pkgs,
       lib,
+      assets,
       ...
     }:
     {
@@ -17,9 +18,9 @@
         systemd.enable = true;
 
         settings = {
-          shell.avatar_path = ../../../../assets/head/Frieren.png;
+          shell.avatar_path = "${assets}/head/Frieren.png";
 
-          wallpaper.directory = ../../../../assets/waypapers;
+          wallpaper.directory = "${assets}/waypapers";
 
           theme = {
             mode = "dark";

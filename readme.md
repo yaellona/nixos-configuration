@@ -2,23 +2,19 @@
 
 桌面环境：niri
 
-桌面组件：
+桌面组件（激活）：
 
 | 组件     | 功能                         |
 | -------- | ---------------------------- |
-| waybar   | 顶栏                         |
-| rofi     | 程序选择器/剪贴板/壁纸切换器 |
-| swayidle | 自动熄屏                     |
-| swaylock | 锁屏                         |
-| mako     | 通知                         |
-| wlsunset | 护眼模式                     |
-| awww     | 壁纸                         |
+| noctalia | 顶栏/启动器/剪贴板/壁纸一体化 |
+| fcitx5   | 中文输入（rime）             |
+| swayidle | 自动熄屏（disabled/ 备份）   |
+
+> 停用组件备份在 `modules/home/desktop/disabled/`（waybar、mako、swaync、rofi/fuzzel 等），恢复时移回启用即可。
 
 - 主题配色管理：stylix
 - shell：fish
-
-> 也不一定是rofi，有时候用用fuzzel
-> 也有可能直接换成noctalia了
+- 壁纸：`assets/waypapers/`
 
 ### 展示
 
@@ -39,7 +35,7 @@
 ## 待修改
 
 1. 双系统还没搞
-2. 继续研究flake-parts，没搞懂template怎么用的
-3. 完善一下nixvim
+2. nixvim / vscode 配置（`disabled/` 里暂停维护）
+3. 完善 noctalia
 
 ---

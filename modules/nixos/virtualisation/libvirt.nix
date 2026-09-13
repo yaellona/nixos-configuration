@@ -14,7 +14,7 @@
       };
     };
 
-    boot.extraModprobeConfig = "options kvm-intel nested=1";
+    boot.extraModprobeConfig = "options kvm_amd nested=1";
     virtualisation.spiceUSBRedirection.enable = true;
     hardware.graphics.enable = true;
     services.qemuGuest.enable = true;

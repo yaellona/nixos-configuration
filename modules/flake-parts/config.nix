@@ -17,17 +17,12 @@ let
           SSH public key
         '';
       };
-      wallpaper = lib.mkOption {
-        type = lib.types.nullOr lib.types.path;
-        default = null;
-        description = "Wallpaper image path for matugen theme generation.";
-      };
     };
   };
 in
 {
   imports = [
-    ../../config.nix
+    ../../me.nix
   ];
   config._module.args.me = config.me;
   options = {

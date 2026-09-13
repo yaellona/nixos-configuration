@@ -2,6 +2,7 @@
 
 {
   flake.modules.nixos.env = {
+    system.stateVersion = "26.11";
     programs.nix-ld.enable = true;
 
     environment.localBinInPath = true;

@@ -7,7 +7,7 @@ let
           spawn "swaylock"
       }
       Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
-          spawn "${../../scripts/clip.sh}"
+          spawn "${../../config/scripts/clip.sh}"
       }
       Mod+D hotkey-overlay-title="打开搜索" repeat=false {
           spawn "${lib.getExe pkgs.fuzzel}"
@@ -346,7 +346,7 @@ in
 #kdl
 ''
   binds {
-  ${Fixed_binds} 
-  ${Custom_noc_binds}
+  ${Fixed_binds}
+  ${Custom_binds}
   }
 ''

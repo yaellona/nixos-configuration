@@ -1,11 +1,11 @@
-{ ... }:
+{ assets, ... }:
 {
   flake.homeManagerModules.fastfetch = {
     programs.fastfetch = {
       enable = true;
       settings = {
         logo = {
-          source = "${../../../../assets/icon/Emilia_logo.webp}";
+          source = "${assets}/icon/Emilia_logo.webp";
           padding = {
             top = 2;
             left = 3;

@@ -21,7 +21,7 @@ filter
   # toString to prevent copying paths to the store unnecessarily
   (
     elem:
-    !isPath elem || (hasSuffix ".nix" (toString elem) && !hasPrefix "_" (baseNameOf (toString elem)) && !hasInfix "/_" (toString elem))
+    !isPath elem || (hasSuffix ".nix" (toString elem) && !hasPrefix "_" (baseNameOf (toString elem)) && !hasInfix "/_" (toString elem) && !hasInfix "/disabled/" (toString elem))
   )
   # Expand any folder to all the files within it.
   (concatMap expandIfFolder list)

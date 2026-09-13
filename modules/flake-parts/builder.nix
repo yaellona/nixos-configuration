@@ -3,6 +3,7 @@
   lib,
   config,
   self,
+  assets,
   ...
 }:
 let
@@ -24,7 +25,7 @@ let
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {
-              inherit inputs;
+              inherit inputs assets;
               me = config.me;
             };
             users.${config.me.username} = {
