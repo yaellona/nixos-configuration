@@ -4,6 +4,7 @@
   config,
   self,
   assets,
+  pkgs-unstable,
   ...
 }:
 let
@@ -25,7 +26,7 @@ let
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {
-              inherit inputs assets;
+              inherit inputs assets pkgs-unstable;
               me = config.me;
             };
             users.${config.me.username} = {
@@ -44,4 +45,5 @@ let
 in
 {
   flake.nixosConfigurations = lib.mapAttrs buildHost (cfg.hosts or { });
+  
 }

@@ -1,14 +1,16 @@
 {
   description = "kaelwen的nixos配置";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:nix-community/stylix";
+      url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -45,6 +47,12 @@
             inherit inputs self nixpkgs;
             assets = ./assets;
             pkgs = import inputs.nixpkgs {
+              system = "x86_64-linux";
+              config = {
+                allowUnfree = true;
+              };
+            };
+            pkgs-unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config = {
                 allowUnfree = true;
