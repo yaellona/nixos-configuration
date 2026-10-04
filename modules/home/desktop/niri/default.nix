@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.niri-flake =
+  flake.modules.homeManager.niri-flake =
     {
       lib,
       pkgs,

@@ -10,7 +10,7 @@ let
   };
 in
 {
-  flake.homeManagerModules.vscode = {
+  flake.modules.homeManager.vscode = {
     programs.vscode = {
       enable = true;
       # package = pkgs.vscodium;

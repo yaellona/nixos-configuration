@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  flake.homeManagerModules.fcitx = {
+  flake.modules.homeManager.fcitx = {
 
     xdg.dataFile = {
       "fcitx5/rime/default.custom.yaml".text =

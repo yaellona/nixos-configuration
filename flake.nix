@@ -46,6 +46,7 @@
           _module.args = {
             inherit inputs self nixpkgs;
             assets = ./assets;
+            me = import ./me.nix;
             pkgs = import inputs.nixpkgs {
               system = "x86_64-linux";
               config = {

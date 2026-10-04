@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.noctalia =
+  flake.modules.homeManager.noctalia =
     {
       inputs,
       config,

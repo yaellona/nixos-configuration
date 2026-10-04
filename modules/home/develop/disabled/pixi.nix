@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  flake.homeManagerModules.pixi = {
+  flake.modules.homeManager.pixi = {
     home.packages = with pkgs; [ pixi ];
 
     home.file.pixi-config = {

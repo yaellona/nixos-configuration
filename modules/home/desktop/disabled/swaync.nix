@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.swaync =
+  flake.modules.homeManager.swaync =
     { pkgs, lib, ... }:
     {
       home.packages = with pkgs; [

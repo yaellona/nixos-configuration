@@ -1,6 +1,6 @@
 { me, ... }:
 {
-  flake.homeManagerModules.bookmarks = {
+  flake.modules.homeManager.bookmarks = {
     xdg.configFile."gtk-3.0/bookmarks".text =
       "
 file:///home/${me.username}/Documents Documents

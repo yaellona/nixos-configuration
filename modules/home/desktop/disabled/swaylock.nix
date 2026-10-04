@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.swaylock =
+  flake.modules.homeManager.swaylock =
     { pkgs, config, ... }:
     {
       programs.swaylock = {

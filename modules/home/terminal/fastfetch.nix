@@ -1,6 +1,6 @@
 { assets, ... }:
 {
-  flake.homeManagerModules.fastfetch = {
+  flake.modules.homeManager.fastfetch = {
     programs.fastfetch = {
       enable = true;
       settings = {

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.homeManagerModules.mako = {
+  flake.modules.homeManager.mako = {
     home.packages = with pkgs; [
       libnotify
     ];

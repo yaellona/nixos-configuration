@@ -12,7 +12,7 @@ let
   textEditor = "helix.desktop";
 in
 {
-  flake.homeManagerModules.xdg = {
+  flake.modules.homeManager.xdg = {
     xdg = {
       enable = true;
       userDirs = {

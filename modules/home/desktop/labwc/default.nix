@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.labwc =
+  flake.modules.homeManager.labwc =
     {
       pkgs,
       lib,

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.homeManagerModules.swayidle =
+  flake.modules.homeManager.swayidle =
     let
       lock = lib.getExe pkgs.swaylock-effects;
       # lock = lib.getExe pkgs.hyprlock;

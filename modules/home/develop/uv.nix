@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeManagerModules.uv = {
+  flake.modules.homeManager.uv = {
     programs.uv = {
       enable = true;
       settings = {

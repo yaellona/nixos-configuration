@@ -1,7 +1,7 @@
 { me, pkgs, assets, ... }:
 
 {
-  flake.homeManagerModules.waypaper = {
+  flake.modules.homeManager.waypaper = {
     home.packages = with pkgs; [
       awww
     ];

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  flake.homeManagerModules.env = {
+  flake.modules.homeManager.env = {
     home.packages = with pkgs; [
       hexo-cli
       gcc

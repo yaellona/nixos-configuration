@@ -1,49 +1,32 @@
 {
   inputs,
-  lib,
   config,
   self,
+  me,
   assets,
   pkgs-unstable,
   ...
 }:
-let
-  cfg = config.flake;
-  allNixosModules = builtins.attrValues (cfg.modules.nixos or { });
-  allHomeManagerModules = builtins.attrValues (cfg.homeManagerModules or { });
-
-  buildHost =
-    name: hostCfg:
+{
+  flake.nixosConfigurations.${me.hostname} =
     inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs self;
-        me = config.me;
-      };
+      specialArgs = { inherit inputs self me; };
       modules = [
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = {
-              inherit inputs assets pkgs-unstable;
-              me = config.me;
-            };
-            users.${config.me.username} = {
-              home.username = config.me.username;
-              home.homeDirectory = "/home/${config.me.username}";
+            extraSpecialArgs = { inherit inputs assets pkgs-unstable me; };
+            users.${me.username} = {
+              home.username = me.username;
+              home.homeDirectory = "/home/${me.username}";
               home.stateVersion = "26.05";
               programs.home-manager.enable = true;
             };
-            sharedModules = allHomeManagerModules ++ hostCfg.homeModules;
+            sharedModules = builtins.attrValues config.flake.modules.homeManager;
           };
         }
-      ]
-      ++ allNixosModules
-      ++ hostCfg.modules;
+      ] ++ builtins.attrValues config.flake.modules.nixos;
     };
-in
-{
-  flake.nixosConfigurations = lib.mapAttrs buildHost (cfg.hosts or { });
-  
 }

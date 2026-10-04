@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.swayosd =
+  flake.modules.homeManager.swayosd =
     { config, lib, ... }:
     {
       services.swayosd = {

@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.opencode =
+  flake.modules.homeManager.opencode =
     { pkgs-unstable, ... }:
     {
       programs.opencode = {

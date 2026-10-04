@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.starship =
+  flake.modules.homeManager.starship =
     { config, lib, ... }:
     {
       stylix.targets.starship.enable = false;

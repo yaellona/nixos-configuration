@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeManagerModules.fish = {
+  flake.modules.homeManager.fish = {
     programs.fish = {
       enable = true;
       shellAbbrs = {
@@ -8,6 +8,7 @@
         reboot = "systemctl reboot";
       };
       interactiveShellInit = ''
+        fastfetch
         set --global fish_greeting エミリア，私の名前はエミリア，ただのエミリアよ。
       '';
     };

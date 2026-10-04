@@ -5,7 +5,7 @@
 }:
 
 {
-  flake.homeManagerModules.helix = {
+  flake.modules.homeManager.helix = {
     home.packages = with pkgs; [
       lldb
     ];
@@ -143,6 +143,10 @@
           {
             name = "qml";
             language-servers = [ "qmlls" ];
+            # 以 .qmlls.ini 所在目录为工作区根：
+            # Quickshell 会把该文件写成托管配置（buildDir + importPaths），
+            # qmlls 依赖它才能解析 Quickshell 模块与项目内组件。
+            roots = [ ".qmlls.ini" ];
             auto-format = true;
             formatter = {
               command = "${pkgs.qt6.qtdeclarative}/bin/qmlformat";

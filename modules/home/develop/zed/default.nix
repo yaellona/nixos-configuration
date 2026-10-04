@@ -1,5 +1,5 @@
 {
-  flake.homeManagerModules.zed = {
+  flake.modules.homeManager.zed = {
     imports = [
       ./_settings
     ];

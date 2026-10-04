@@ -1,9 +1,6 @@
+{ ... }:
 {
-  config,
-  ...
-}:
-{
-  config.flake.hosts.${config.me.hostname} = {
-    modules = [ ./_hardware-configuration.nix ];
+  flake.modules.nixos.host = {
+    imports = [ ./_hardware-configuration.nix ];
   };
 }
