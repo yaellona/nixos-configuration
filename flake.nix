@@ -26,6 +26,10 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yaellona-quickshell = {
+      url = "git+https://gitee.com/rimyn/yaellona-quickshell.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
   outputs =

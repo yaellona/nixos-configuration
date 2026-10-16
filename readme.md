@@ -4,11 +4,11 @@
 
 桌面组件（激活）：
 
-| 组件     | 功能                         |
-| -------- | ---------------------------- |
-| noctalia | 顶栏/启动器/剪贴板/壁纸一体化 |
-| fcitx5   | 中文输入（rime）             |
-| swayidle | 自动熄屏（disabled/ 备份）   |
+| 组件                             | 功能                               |
+| -------------------------------- | ---------------------------------- |
+| quickshell (yaellona-quickshell) | 顶栏/启动器/剪贴板/壁纸/锁屏一体化 |
+| fcitx5                           | 中文输入（rime）                   |
+| swayidle                         | 自动熄屏（disabled/ 备份）         |
 
 > 停用组件备份在 `modules/home/desktop/disabled/`（waybar、mako、swaync、rofi/fuzzel 等），恢复时移回启用即可。
 
@@ -36,6 +36,6 @@
 
 1. 双系统还没搞
 2. nixvim / vscode 配置（`disabled/` 里暂停维护）
-3. 完善 noctalia
+3. 完善 quickshell（yaellona-quickshell）
 
 ---

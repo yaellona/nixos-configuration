@@ -86,6 +86,78 @@ let
       }
     '';
 
+  qs_ipc = ''"qs" "ipc"'';
+  Custom_qs_binds =
+    #kdl
+    ''
+      Mod+Space hotkey-overlay-title="应用启动器" repeat=false {
+          spawn ${qs_ipc} "call" "launcher" "toggle"
+      }
+      Mod+D hotkey-overlay-title="应用启动器" repeat=false {
+          spawn ${qs_ipc} "call" "launcher" "toggle"
+      }
+      Mod+C hotkey-overlay-title="打开剪切板" repeat=false {
+          spawn ${qs_ipc} "call" "clipboard" "toggle"
+      }
+      Mod+V hotkey-overlay-title="音量面板" repeat=false {
+          spawn ${qs_ipc} "call" "volume" "toggle"
+      }
+      Mod+X hotkey-overlay-title="媒体面板" repeat=false {
+          spawn ${qs_ipc} "call" "media" "toggle"
+      }
+      Mod+N hotkey-overlay-title="通知中心" repeat=false {
+          spawn ${qs_ipc} "call" "notifications" "toggle"
+      }
+      Mod+B hotkey-overlay-title="蓝牙面板" repeat=false {
+          spawn ${qs_ipc} "call" "bluetooth" "toggle"
+      }
+      Mod+I hotkey-overlay-title="WIFI 面板" repeat=false {
+          spawn ${qs_ipc} "call" "wifi" "toggle"
+      }
+      Mod+O hotkey-overlay-title="日历" repeat=false {
+          spawn ${qs_ipc} "call" "calendar" "toggle"
+      }
+      Mod+G hotkey-overlay-title="打开壁纸选择器" repeat=false {
+          spawn ${qs_ipc} "call" "wallpaper" "toggle"
+      }
+      Mod+W hotkey-overlay-title="打开壁纸选择器" repeat=false {
+          spawn ${qs_ipc} "call" "wallpaper" "toggle"
+      }
+      Mod+Ctrl+R hotkey-overlay-title="随机壁纸" {
+          spawn ${qs_ipc} "call" "wallpaper" "random"
+      }
+      Mod+Shift+P hotkey-overlay-title="电源菜单" repeat=false {
+          spawn ${qs_ipc} "call" "power" "toggle"
+      }
+      Mod+Alt+L hotkey-overlay-title="锁屏" repeat=false {
+          spawn ${qs_ipc} "call" "lock" "now"
+      }
+      XF86AudioLowerVolume allow-when-locked=true {
+          spawn ${qs_ipc} "call" "osd" "volumeDown"
+      }
+      XF86AudioMicMute allow-when-locked=true {
+          spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
+      }
+      XF86AudioMute allow-when-locked=true {
+          spawn ${qs_ipc} "call" "osd" "mute"
+      }
+      XF86AudioRaiseVolume allow-when-locked=true {
+          spawn ${qs_ipc} "call" "osd" "volumeUp"
+      }
+      XF86MonBrightnessDown allow-when-locked=true {
+          spawn "${lib.getExe pkgs.brightnessctl}" "set" "5%-"
+      }
+      XF86MonBrightnessUp allow-when-locked=true {
+          spawn "${lib.getExe pkgs.brightnessctl}" "set" "5%+"
+      }
+      Mod+T hotkey-overlay-title="打开终端" repeat=false {
+          spawn "${lib.getExe pkgs.kitty}"
+      }
+      Mod+E hotkey-overlay-title="打开文件管理器" repeat=false {
+          spawn "${lib.getExe pkgs.thunar}"
+      }
+    '';
+
   Fixed_binds =
     #kdl
     ''
@@ -347,6 +419,6 @@ in
 ''
   binds {
   ${Fixed_binds}
-  ${Custom_binds}
+  ${Custom_qs_binds}
   }
 ''
